@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order genuine water pump parts and accessories online with fast delivery from NADHA ENTERPRISES">
+    <title>NADHA ENTERPRISES - PUMP AND ACCESSORIES</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="/static/images/favicon.ico" type="image/x-icon">
+    <style>
+        /* Enhanced product grid styling */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            padding: 20px;
+        }
+        
+        .product-card {
+            border: 1px solid #e1e1e1;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #4CAF50;
+        }
+        
+        .product-img {
+            width: 100%;
+            height: 200px;
+            object-fit: contain;
+            margin-bottom: 15px;
+        }
+        
+        .product-title {
+            font-size: 1.2rem;
+            margin: 0 0 8px;
+            color: #333;
+        }
+        
+        .product-category {
+            font-size: 0.9rem;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        
+        .product-price {
+            font-weight: 700;
+            color: #2a6496;
+            font-size: 1.3rem;
+            margin: 15px 0;
+        }
+        
+        .add-to-cart-btn {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        
+        .add-to-cart-btn:hover {
+            background-color: #3e8e41;
+        }
+        
+        /* Loading indicator */
+        .loading-indicator {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            grid-column: 1 / -1;
+            padding: 40px 0;
+        }
+        
+        .spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-radius: 50%;
+            border-top: 4px solid #4CAF50;
+            width: 40px;
+            height: 40px;
+            animation: spin 1s linear infinite;
+            margin-bottom: 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+                gap: 15px;
+            }
+            
+            .product-card {
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header" role="banner">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-container">
+                    <img src="/static/images/logo.png" alt="NADHA ENTERPRISES Logo" class="logo">
+                    <!-- In the head section, add this style -->
+<style>
+    /* Add this to your existing styles */
+    .logo {
+        width: 300px; /* Adjust this value to make the logo smaller */
+        height: auto; /* Maintain aspect ratio */
+    }
+    
+    /* If you want to make the header height smaller to match */
+    .header-content {
+        padding: 10px 0; /* Adjust header padding if needed */
+    }
+</style>
+                </div>
+                <div class="header-text">
+                    <h1>NADHA ENTERPRISES</h1>
+                    <p class="tagline">PUMP AND ACCESSORIES</p>
+                </div>
+                <div class="header-cta">
+                    <a href="#customer-form" class="btn outline">Quick Order</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content container" role="main">
+        <section class="product-section" aria-labelledby="products-heading">
+            <div class="section-header">
+                <h2 id="products-heading">Our Products</h2>
+                <div class="search-filter-container">
+                    <div class="search-box">
+                        <input type="text" id="product-search" placeholder="Search products..." 
+                               aria-label="Search products" autocomplete="off">
+                        <button id="search-btn" aria-label="Search products">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </button>
+                    </div>
+                    
+                    <div class="filter-controls">
+                        <div class="filter-group">
+                            <label for="category-filter" class="filter-label">Filter by:</label>
+                            <select id="category-filter" aria-label="Filter products by category">
+                                <option value="all">All Categories</option>
+                                <option value="FINOLEX FLAT CABLES">FINOLEX FLAT CABLES</option>
+                                <option value="U CLAMP">U CLAMP</option>
+                                <option value="bearing">Bearings</option>
+                                <option value="motor">Motors</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="sort-by" class="filter-label">Sort by:</label>
+                            <select id="sort-by" aria-label="Sort products">
+                                <option value="name-asc">Name (A-Z)</option>
+                                <option value="name-desc">Name (Z-A)</option>
+                                <option value="price-asc">Price (Low-High)</option>
+                                <option value="price-desc">Price (High-Low)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="product-list" class="product-grid" role="list" aria-label="List of products">
+                <!-- Products will be loaded here dynamically -->
+                <div class="loading-indicator" aria-live="polite">
+                    <div class="spinner"></div>
+                    <p>Loading products...</p>
+                </div>
+            </div>
+        </section>
+        
+        <aside class="cart-section" aria-labelledby="cart-heading">
+            <div class="cart-container">
+                <div class="section-header">
+                    <h2 id="cart-heading">Your Order</h2>
+                    <span id="cart-count" class="badge" aria-live="polite">0</span>
+                </div>
+                
+                <div class="cart-content">
+                    <div id="cart-empty" class="empty-cart">
+                        <img src="/static/images/empty-cart.svg" alt="" aria-hidden="true">
+                        <p>Your cart is empty</p>
+                        <p class="hint">Add products to get started</p>
+                    </div>
+                    
+                    <ul id="cart-list" class="cart-items" aria-label="Items in your shopping cart">
+                        <!-- Cart items will be loaded here dynamically -->
+                    </ul>
+                    
+                    <div class="cart-summary">
+                        <div class="summary-row">
+                            <span>Subtotal:</span>
+                            <span id="subtotal">₹0.00</span>
+                        </div>
+                        <div class="summary-row">
+                            <span>Tax (5%):</span>
+                            <span id="tax">₹0.00</span>
+                        </div>
+                        <div class="summary-row discount-row">
+                            <span>Discount:</span>
+                            <span id="discount">-₹0.00</span>
+                        </div>
+                        <div class="summary-row total">
+                            <span>Total:</span>
+                            <span id="total">₹0.00</span>
+                        </div>
+                    </div>
+                    
+                    <div class="coupon-section">
+                        <label for="coupon-code" class="visually-hidden">Coupon Code</label>
+                        <input type="text" id="coupon-code" placeholder="Enter coupon code">
+                        <button id="apply-coupon" class="btn small">Apply</button>
+                    </div>
+                </div>
+                
+                <div class="customer-details">
+                    <h3>Customer Information</h3>
+                    <form id="customer-form" novalidate>
+                        <div class="form-group">
+                            <label for="customer-name">Full Name <span class="required">*</span></label>
+                            <input type="text" id="customer-name" placeholder="Enter your full name" required>
+                            <div class="error-message" id="name-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-phone">Phone Number <span class="required">*</span></label>
+                            <input type="tel" id="customer-phone" placeholder="Enter 10-digit phone number" 
+                                   pattern="[0-9]{10}" required>
+                            <div class="error-message" id="phone-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-email">Email (Optional)</label>
+                            <input type="email" id="customer-email" placeholder="Enter your email">
+                        </div>
+                        <div class="form-group">
+                            <label for="customer-address">Delivery Address <span class="required">*</span></label>
+                            <textarea id="customer-address" rows="3" placeholder="Enter complete delivery address with landmarks" required></textarea>
+                            <div class="error-message" id="address-error"></div>
+                        </div>
+                        <div class="form-group">
+                            <label for="delivery-notes">Special Instructions</label>
+                            <textarea id="delivery-notes" rows="2" placeholder="Any special delivery instructions"></textarea>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="button" id="clear-cart-btn" class="btn secondary" aria-label="Clear shopping cart">
+                                Clear Cart
+                            </button>
+                            <button type="submit" id="checkout-btn" class="btn primary">
+                                <span class="btn-text">Place Order</span>
+                                <span class="btn-icon" aria-hidden="true">→</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="main-footer" role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="/about">About Us</a></li>
+                        <li><a href="/products">All Products</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a href="/faq">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <address>
+                        <p>Phone: <a href="tel:+919037180496">+91 9037180496</a></p>
+                        <p>Email: <a href="mailto:NADHAENTERPRISES.com">NADHAENTERPRISES.com</a></p>
+                    </address>
+                </div>
+                <div class="footer-section">
+                    <h3>VISIT AGAIN</h3>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; <span id="current-year">2023</span> NADHA ENTERPRISES. All rights reserved.</p>
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="social-icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923 1.942.174.51.332 1.09.372 1.942C7.99 15.555 8 15.827 8 18c0 2.173-.01 2.445-.048 3.298-.04.852-.174 1.433-.372 1.941-.205.526-.478.972-.923 1.417-.444.445-.89.719-1.416.923-.51.198-1.09.333-1.942.372C5.555 23.99 5.827 24 8 24c2.173 0 2.445-.01 3.298-.048.852-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.444.718-.89.923-1.416.197-.51.332-1.09.372-1.942C15.99 15.555 16 15.827 16 13c0-2.172-.01-2.444-.048-3.297-.04-.852-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div id="order-success-modal" class="modal" role="dialog" aria-labelledby="modal-title" aria-modal="true" hidden>
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modal-title">Order Placed Successfully!</h2>
+                <button class="close-modal" aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" fill="#4CAF50" viewBox="0 0 16 16" aria-hidden="true">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+                    </svg>
+                </div>
+                <p>Thank you for your order <span id="customer-name-display"></span>!</p>
+                <p class="order-number">Your order ID is: <strong id="order-id">NADA-XXXXXX</strong></p>
+                <div class="order-summary">
+                    <p>We've sent confirmation to <span id="customer-contact"></span></p>
+                    <p>Estimated delivery: <strong id="delivery-date"></strong></p>
+                </div>
+                <div class="modal-actions">
+                    <button id="print-receipt" class="btn secondary">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16" aria-hidden="true">
+                            <path d="M5 1a2 2 0 0 0-2 2v1h10V3a2 2 0 0 0-2-2H5zm6 8H5a1 1 0 0 0-1 1v3a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/>
+                            <path d="M0 7a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2h-1v-2a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v2H2a2 2 0 0 1-2-2V7zm2.5 1a.5.5 0 1 0 0-1 .5.5 0 0 0 0 1z"/>
+                        </svg>
+                        Print Receipt
+                    </button>
+                    <button id="close-modal-btn" class="btn primary">Continue Shopping</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/static/js/script.js" defer></script>
+    <script>
+        // Initialize current year in footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+        
+        // Simple form validation example
+        document.getElementById('customer-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Validate required fields
+            const name = document.getElementById('customer-name').value.trim();
+            const phone = document.getElementById('customer-phone').value.trim();
+            const address = document.getElementById('customer-address').value.trim();
+            
+            let isValid = true;
+            
+            if (!name) {
+                document.getElementById('name-error').textContent = 'Please enter your name';
+                isValid = false;
+            } else {
+                document.getElementById('name-error').textContent = '';
+            }
+            
+            if (!phone || !/^\d{10}$/.test(phone)) {
+                document.getElementById('phone-error').textContent = 'Please enter a valid 10-digit phone number';
+                isValid = false;
+            } else {
+                document.getElementById('phone-error').textContent = '';
+            }
+            
+            if (!address) {
+                document.getElementById('address-error').textContent = 'Please enter your delivery address';
+                isValid = false;
+            } else {
+                document.getElementById('address-error').textContent = '';
+            }
+            
+            if (isValid) {
+                // In a real app, you would submit the form data to your server
+                const orderId = 'NADHA-' + Math.floor(Math.random() * 1000000);
+                document.getElementById('order-id').textContent = orderId;
+                document.getElementById('customer-name-display').textContent = name;
+                document.getElementById('customer-contact').textContent = phone;
+                
+                // Set delivery date to 3 days from now
+                const deliveryDate = new Date();
+                deliveryDate.setDate(deliveryDate.getDate() + 3);
+                document.getElementById('delivery-date').textContent = deliveryDate.toDateString();
+                
+                // Show success modal
+                document.getElementById('order-success-modal').hidden = false;
+                
+                // Reset form and cart (in a real app, this would happen after successful server response)
+                this.reset();
+                // cart = []; // You would clear your cart array here
+                // updateCart(); // And update the cart display
+            }
+        });
+        
+        // Modal close functionality
+        document.querySelector('.close-modal').addEventListener('click', function() {
+            document.getElementById('order-success-modal').hidden = true;
+        });
+        
+        document.getElementById('close-modal-btn').addEventListener('click', function() {
+            document.getElementById('order-success-modal').hidden = true;
+        });
+        
+        // Print receipt functionality
+        document.getElementById('print-receipt').addEventListener('click', function() {
+            window.print();
+        });
+    </script>
+</body>
+</html>
